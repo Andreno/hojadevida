@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>entregable de operaciones y funciones</title>
+</head>
+<body>
+
+  <h2>Entregable de funciones con botones</h2>
+
+  <label for="num1Input">Primer número:</label>
+  <input type="number" id="num1Input"><br><br>
+
+  <label for="num2Input">Segundo número:</label>
+  <input type="number" id="num2Input"><br><br>
+
+  <button onclick="realizarOperacion('suma')">Sumar</button>
+  <button onclick="realizarOperacion('resta')">Restar</button>
+  <button onclick="realizarOperacion('multiplicacion')">Multiplicar</button>
+  <button onclick="realizarOperacion('division')">Dividir</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    function obtenerValores() {
+      let num1 = Number(document.getElementById("num1Input").value);
+      let num2 = Number(document.getElementById("num2Input").value);
+      return { num1, num2 };
+    }
+
+    function realizarOperacion(operacion) {
+      let { num1, num2 } = obtenerValores();
+      let resultado;
+
+      if (operacion === "suma") {
+        resultado = num1 + num2;
+      } else if (operacion === "resta") {
+        resultado = num1 - num2;
+      } else if (operacion === "multiplicacion") {
+        resultado = num1 * num2;
+      } else if (operacion === "division") {
+        if (num2 === 0) {
+          resultado = "No se puede dividir por cero";
+        } else {
+          resultado = num1 / num2;
+        }
+      } else {
+        resultado = "Operación no válida";
+      }
+
+      document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+    }
+  </script>
+
+</body>
+</html>

@@ -10,7 +10,17 @@ z-index: 1000;
 border-radius: 0 0 15px 15px;
   align-items: center;
   gap: 40px;
+  
+/* Responsive Design */ @media (max-width: 200px) 
 
+{ nav ul { display: none; flex-direction: column; width: 100%; 
+  background-color: #333; }
+
+nav ul li a { padding: 1em; text-align: center; }
+
+#nav-toggle { display: block; } 
+
+.nav-open ul { display: flex; } }
 
 }
 
@@ -47,6 +57,15 @@ top: 0;
 z-index: 1000;
 border-radius: 15px 15px 15px 15px;}
 
+section {
+margin:0;
+padding:100;
+background-color: rgb(241, 241, 241);
+top: 0;
+z-index: 1000;
+border-radius: 15px 15px 15px 15px;}
+
+
 button{
     border-radius: 0 15px 15px 15px;
       text-decoration: none;}
@@ -64,6 +83,8 @@ button:hover {
   height: 15px;
   border-radius: 10px;
   margin-bottom: 10px;
+
+
 }
 .progreso {
   height: 100%;
